@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>demo login</title>
+    </head>
+    <body>
+        <h1>Click the button to connect with SalseForce</h1>
+        <button id="login1">Connect</button>
+        <!-- <script src="/socket.io/socket.io.js"></script> -->
+        <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script type="text/javascript">
+            var login1=document.getElementById('login1');
+            login1.onclick=function(){
+                console.log('a');
+                $.get('/oauth2/auth',function(data,status){
+                    console.log(`${data}`);
+                });
+            };
+            /*var socket=io.connect();
+            var login1=document.getElementById('login1');
+            login1.onclick=function(){
+                console.log("user click login");
+                socket.emit('login1','hello');
+            }       
+            */
+        </script>
+    </body>
+</html>

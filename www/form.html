@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>demo</title>
+        <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script type='text/javascript'>
+        function regist(){
+            $ .ajax({
+                type:'POST',
+                dataType:'json',
+                url:'http://127.0.1:9999',
+                data:$('#form1').serialize(),
+                success: function(data){
+                    //console.log(data);
+                    alert('success');
+                },
+                error:function(data){
+                    //console.log(data);
+                }
+            });}
+        </script>
+    </head>
+    <body>
+        <h1>Click the button to connect with SalseForce</h1>
+        <button>link</button>
+        <br>
+        <h1> please eneter your basic info below:</h1>
+        <form id ='form1' onsubmit="return false" action='##' method='post'>
+            First Name:<br>
+            <input type="text" name="FirstName">
+            <br>
+            Last Name
+            <br>
+            <input type="text" name="LastName">
+            <br>
+            Phone:<br>
+            <input type='number' name='Phone'>
+            <br><br>
+            <input type='submit' onclick='regist()' value="Submit">
+        </form>
+    </body>
+</html>
